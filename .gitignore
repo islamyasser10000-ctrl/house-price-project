@@ -1,0 +1,42 @@
+# --- Python / backend ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Node / frontend ---
+node_modules/
+dist/
+.vite/
+
+# --- Environment files (commit only the .env.example templates) ---
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env
+
+# --- Logs ---
+*.log
+npm-debug.log*
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Raw dataset (large — download instructions are in the README) ---
+notebooks/data/*.csv
+notebooks/data/*.zip
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# NOTE: models/house_price.pkl and models/locations.json are intentionally
+# NOT ignored here — commit them if the .pkl is under 50 MB, per the project guide.
+*.pkl

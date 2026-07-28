@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  --navy: #0f2b46;
+  --panel: #14324f;
+  --panel-raised: #1a3d5e;
+  --line: #6fa8d6;
+  --line-soft: rgba(111, 168, 214, 0.22);
+  --paper: #eaf3fb;
+  --brass: #c9a66b;
+  --brass-dim: #9c7f4f;
+  --red-pencil: #c1554a;
+
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--paper);
+  font-family: var(--font-sans);
+  background-color: var(--navy);
+  background-image:
+    linear-gradient(var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size: 32px 32px;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--brass);
+}
+
+button {
+  font-family: inherit;
+}
+
+::selection {
+  background: var(--brass);
+  color: var(--navy);
+}
+
+/* Reduced-motion respect: kill non-essential transitions/animations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 2px;
+}

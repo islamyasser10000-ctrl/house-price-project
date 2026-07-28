@@ -1,0 +1,109 @@
+.sheet {
+  max-width: 760px;
+  margin: 48px auto;
+  padding: 40px 44px 32px;
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--line-soft);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 600px) {
+  .sheet {
+    margin: 16px;
+    padding: 28px 20px 24px;
+  }
+}
+
+/* Corner registration marks, like a printed drafting sheet */
+.sheet::before,
+.sheet::after,
+.sheet-marks span {
+  content: "";
+}
+
+.sheet-mark {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+.sheet-mark::before,
+.sheet-mark::after {
+  content: "";
+  position: absolute;
+  background: var(--line);
+}
+
+.sheet-mark::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  transform: translateY(-50%);
+}
+
+.sheet-mark::after {
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  transform: translateX(-50%);
+}
+
+.sheet-mark--tl { top: -9px; left: -9px; }
+.sheet-mark--tr { top: -9px; right: -9px; }
+.sheet-mark--bl { bottom: -9px; left: -9px; }
+.sheet-mark--br { bottom: -9px; right: -9px; }
+
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px dashed var(--line-soft);
+  padding-bottom: 16px;
+  margin-bottom: 28px;
+}
+
+.sheet-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--line);
+}
+
+.sheet-title {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  margin: 6px 0 0;
+  color: var(--paper);
+}
+
+.sheet-scale {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--line);
+  text-align: right;
+  line-height: 1.6;
+}
+
+.app-footer {
+  max-width: 760px;
+  margin: 0 auto 48px;
+  padding: 0 44px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--line);
+  opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+  .app-footer {
+    padding: 0 20px;
+  }
+}
