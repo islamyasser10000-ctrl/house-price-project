@@ -78,8 +78,7 @@ house-price-project/
 
 ## 1. Get the dataset
 
-Download **House Price** by Juhi Bhojani from Kaggle:
-https://www.kaggle.com/datasets/juhibhojani/house-price
+
 
 **Option A — manual:** click *Download*, unzip, and place `house_prices.csv` in
 `notebooks/data/`.
@@ -88,8 +87,7 @@ https://www.kaggle.com/datasets/juhibhojani/house-price
 
 ```bash
 pip install kaggle
-# Get an API token: Kaggle → Settings → API → "Create New Token"
-# Place kaggle.json in ~/.kaggle/ (macOS/Linux) or C:\Users\<you>\.kaggle\ (Windows)
+
 kaggle datasets download -d juhibhojani/house-price -p notebooks/data --unzip
 ```
 
@@ -201,25 +199,20 @@ list of validation errors.
 
 ## Model metrics
 
-Fill this in from your notebook's Section 5 (Evaluate) once you've run it against
-the real dataset:
+
 
 | Model              | Target        | MAE (₹) | RMSE (₹) | R²   |
 | ------------------- | -------------- | -------- | --------- | ----- |
-| LinearRegression    | raw            | _fill in_ | _fill in_ | _fill in_ |
-| RandomForest        | `log1p(price)` | _fill in_ | _fill in_ | _fill in_ |
-| GradientBoosting    | `log1p(price)` | _fill in_ | _fill in_ | _fill in_ |
+| LinearRegression    | raw            | 4.391548e+06 | 8.160503e+06 | 0.619898 |
+| RandomForest        | `log1p(price)` | 1.002090e+06 | 4.646256e+06 | 0.876782_ |
+| GradientBoosting    | `log1p(price)` | 2.841248e+06 | 5.712762e+06 | 0.813723 |
 
-**Winner:** _name the model you selected and, in 1–2 sentences, why (lowest RMSE /
-best R² / best generalization on cross-validation)._
+**Winner:** RandomForest without log transform (log_target=False), because it achieved the lowest RMSE ($4.64 \times 10^6$) and the highest $R^2$ ($0.8768$) on the test set
 
 ## Screenshots
 
-_Add screenshots of the running form and result page here, e.g.:_
-
-```
-![Form](docs/screenshot-form.png)
-![Result](docs/screenshot-result.png)
+![Running Form](docs/screenshot-form.png)
+![Result Page](docs/screenshot-result.png)
 ```
 
 ## Troubleshooting
